@@ -1,0 +1,385 @@
+:root {
+  --primary-color: #272626; /* Bright cyan */
+  --secondary-color: #424242; /* Dark gray */
+  --accent-color: #ff4081; /* Pink */
+  --success-color: #4caf50; /* Green */
+  --warning-color: #ff9800; /* Orange */
+  --background-color: #757373; /* Dark background */
+  --card-background:  #ffffff; /* Slightly lighter dark background */
+  --border-radius: 10px;
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --transition-speed: 0.3s;
+  --font-family: 'Roboto', sans-serif;
+}
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/533/463/577/abstract-texture-simple-simple-background-wallpaper-preview.jpg'); /* Add background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    min-height: 100vh;
+    font-size: 16px;
+  }
+  
+  .app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .app-header {
+    background-color: var(--card-background);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .app-header h1 {
+    color: var(--primary-color);
+    font-size: 2.25rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .toolbar {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .tool-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .tool-button:hover {
+    background-color: #005a8e;
+  }
+  
+  .upload-section {
+    margin-bottom: 2rem;
+  }
+  
+  .upload-form {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .file-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .file-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    padding: 1.5rem;
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+  }
+  
+  .file-input:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(0, 119, 182, 0.05);
+  }
+  
+  .file-input input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-name {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .submit-button:hover {
+    background-color: #005a8e;
+  }
+  
+  .image-viewers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .image-container {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-header h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .canvas-wrapper {
+    position: relative;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: crosshair;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .control-button {
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+  }
+  
+  .control-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .analysis-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+  
+  .profile-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .profile-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  }
+  
+  .chart-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  
+  .action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+  }
+  .app-logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 1rem; /* Spacing between the logo and text */
+}
+
+  .slider-container {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .nav-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 0;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .nav-button:hover {
+    background-color: #005a8e;
+  }
+  
+  .nav-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  #slideIndicator {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  #absorptionProfile {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+  }
+  
+  .point-info {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    pointer-events: none;
+    box-shadow: var(--shadow-sm);
+    display: none;
+    z-index: 1;
+  }
+  
+  @media (max-width: 1200px) {
+    .image-viewers,
+    .analysis-results {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .app-container {
+      padding: 1rem;
+    }
+  
+    .app-header {
+      padding: 1.25rem 1.5rem;
+    }
+  
+    .app-header h1 {
+      font-size: 1.75rem;
+    }
+  
+    .upload-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .action-button {
+      width: 100%;
+    }
+  
+    .toolbar {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
